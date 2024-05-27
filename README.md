@@ -6,8 +6,9 @@ Documentation for simulating Boolean models
 
 <br />
 
-Model functions
+Model functions[^2]
 - PCC_red_funx.txt
+    - Boolean functions of the reduced PC model
 
 <br />
 
@@ -17,7 +18,9 @@ Simulation code (MATLAB)
 - chapter_codes_filled.m
     - Completed code (solutions) for chapter exercises
 - PCC_red_BNtoPoly.txt
-- Matlab_dependencies -- folder of all the needed toolboxes to run MATLAB code
+    - Code to convert the PC Boolean functions to polynomials
+- Matlab_dependencies
+    - folder of all the needed toolboxes to run MATLAB code
 
 
 <br />
