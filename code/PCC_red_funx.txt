@@ -1,0 +1,72 @@
+Cytokines (purple nodes)
+1. TNFalpha = TNFalpha
+f1 = x1
+
+2. Thiazolidinedione = Thiazolidinedione
+f2 = x2
+
+3. TGFb1 = TGFb1
+f3 = x3
+
+4. IFNgamma = IFNgamma
+f4 = x4
+
+
+------------------------------------------------------------------------------------------------
+Stellate Cell (Blue)
+5. RASs = ( ( NFkappaBs ) | ( STATp ) | ( PIP3p ) | ( RASp ) | ( ERKs ) )
+f5 = x6 | x15 | x16 | x14 | x9
+
+6. NFkappaBs = ( ( TNFalpha ) | ( PIP3s ) )
+f6 = x1 | x7
+
+7. PIP3s = ( ~ P53s ) & ( ( TGFb1 ) | ( RASs ) )
+f7 = (x8+1) & ( x3 | x5 )
+
+8. P53s = ( ~ PIP3s ) & ( ~P53s ) & ( RASs )
+f8 = (x7+1) & (x8+1) & x5
+
+9. ERKs = ( TGFb1 ) | ( RASs )
+f9 = x3 | x5
+
+10. Pros = ( ~ P53s ) & ( ERKs )
+f10 = (x8+1) & x9
+
+11. Migs = ( PIP3s ) & ( ERKs ) & ( Acts )
+f11 = x7 & x9 & x12
+
+12. Acts = ( TGFb1 ) & ( ( ~IFNgamma ) | ( ~Thiazolidinedione ) ) & ( ( NFkappaBs ) | ( ERKs ) )
+f12 = x3 & ((x4 +1) | (x2+1)) & (x6 | x9)
+
+
+------------------------------------------------------------------------------------------------
+Pancreatic Cell (cyan)
+13. HER2p = HER2p
+f13 = x13
+
+14. RASp = ( RASp ) | ( HER2p ) | ( ERKs )
+f14 = x14 | x13 | x9
+
+15. STATp = HER2p
+f15 = x13
+
+16. PIP3p = ( ~ P53p ) & ( ( RASp ) | ( HER2p ) )
+f16 = (x19+1) & (x14 | x13)
+
+17. P21p = ( ~ STATp ) & ( ( TGFb1 ) | ( P53p ) )
+f17 = (x15+1) & (x3 | x19)
+
+18. BCLXLp = ( ~ P53p ) & ( ( PIP3p ) | ( STATp ) | ( RASp ) )
+f18 = (x19+1) & (x16 | x15 | x14)
+
+19. P53p = ~ ( ( ( P21p ) | ( ~PIP3p ) ) & ( ( PIP3p ) | ( P53p ) ) )
+f19 = (((x17 | (x16+1)) & (x16 | x19))+1)
+
+20. CASPp = ( ~ PIP3p ) & ( ( P53p ) | ( ~BCLXLp ) )
+f20 = (x16+1) & (x19 | x18)
+
+21. Autp = ( ( RASp ) | ( ~ PIP3p ) ) & ( ( PIP3p ) | ( ( ~BCLXLp ) & (~CASPp ) ) )
+f21 = (x14 | (x16+1)) & (x16 | ((x18+1)&(x20+1)))
+
+22. Prop = ( ~P21p ) & ( PIP3p ) & ( RASp )
+f22 = (x17+1) & x16 & x14

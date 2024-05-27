@@ -1,0 +1,173 @@
+-- BN to Poly code for PCC reduced by Dr. Daniel Plaugher
+
+n = 22;
+Xstring=apply(n,i->"x"|(i+1))
+DEN=apply(Xstring,v->v|"^2-"|v)
+R=ZZ/2[Xstring]/ideal(DEN/value)
+RingElement | RingElement :=(x,y)->x+y+x*y;
+RingElement & RingElement :=(x,y)->x*y;
+
+
+x1
+x2
+x3
+x4
+x6 | x15 | x16 | x14 | x9
+x1 | x7
+(x8+1) & ( x3 | x5 )
+(x7+1) & (x8+1) & x5
+x3 | x5
+(x8+1) & x9
+x7 & x9 & x12
+x3 & ((x4 +1) | (x2+1)) & (x6 | x9)
+x13
+x14 | x13 | x9
+x13
+(x19+1) & (x14 | x13)
+(x15+1) & (x3 | x19)
+(x19+1) & (x16 | x15 | x14)
+(((x17 | (x16+1)) & (x16 | x19))+1)
+(x16+1) & (x19 | x18)
+(x14 | (x16+1)) & (x16 | ((x18+1)&(x20+1)))
+(x17+1) & x16 & x14
+
+
+
+
+
+-----------------------------------------------------------
+--------------------- OUTPUT ------------------------------
+-----------------------------------------------------------
+
+i1 : n = 22;
+
+i2 : 
+Xstring=apply(n,i->"x"|(i+1))
+o2 =  {x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22} 
+o2 :  List 
+
+i3 : DEN=apply(Xstring,v->v|"^2-"|v)
+o3 =  {x1^2-x1,x2^2-x2,x3^2-x3,x4^2-x4,x5^2-x5,x6^2-x6,x7^2-x7,x8^2-x8,x9^2-x9,x10^2-x10,x11^2-x11,x12^2-x12,x13^2-x13,x14^2-x14,x15^2-x15,x16^2-x16,x17^2-x17,x18^2-x18,x19^2-x19,x20^2-x20,x21^2-x21,x22^2-x22} 
+o3 :  List
+
+i4 : 
+R=ZZ/2[Xstring]/ideal(DEN/value)
+o4 =  R 
+o4 :  QuotientRing 
+
+i5 : 
+RingElement | RingElement :=(x,y)->x+y+x*y;
+
+i6 : 
+RingElement & RingElement :=(x,y)->x*y;
+
+i7 : 
+x1
+o7 =  x1 
+o7 :  R 
+
+i8 : 
+x2
+o8 =  x2 
+o8 :  R 
+
+i9 : 
+x3
+o9 =  x3 
+o9 :  R 
+
+i10 : 
+x4
+o10 =  x4 
+o10 :  R 
+
+i11 : 
+x6 | x15 | x16 | x14 | x9
+o11 =  x6x9x14x15x16+x6x9x14x15+x6x9x14x16+x6x9x15x16+x6x14x15x16+x9x14x15x16+x6x9x14+x6x9x15+x6x14x15+x9x14x15+x6x9x16+x6x14x16+x9x14x16+x6x15x16+x9x15x16+x14x15x16+x6x9+x6x14+x9x14+x6x15+x9x15+x14x15+x6x16+x9x16+x14x16+x15x16+x6+x9+x14+x15+x16 
+o11 :  R 
+
+i12 : 
+x1 | x7
+o12 =  x1x7+x1+x7 
+o12 :  R 
+
+i13 : 
+(x8+1) & ( x3 | x5 )
+o13 =  x3x5x8+x3x5+x3x8+x5x8+x3+x5 
+o13 :  R 
+
+i14 : 
+(x7+1) & (x8+1) & x5
+o14 =  x5x7x8+x5x7+x5x8+x5 
+o14 :  R 
+
+i15 : 
+x3 | x5
+o15 =  x3x5+x3+x5 
+o15 :  R 
+
+i16 : 
+(x8+1) & x9
+o16 =  x8x9+x9 
+o16 :  R 
+
+i17 : 
+x7 & x9 & x12
+o17 =  x7x9x12 
+o17 :  R 
+
+i18 : 
+x3 & ((x4 +1) | (x2+1)) & (x6 | x9)
+o18 =  x2x3x4x6x9+x2x3x4x6+x2x3x4x9+x3x6x9+x3x6+x3x9 
+o18 :  R 
+
+i19 : 
+x13
+o19 =  x13 
+o19 :  R 
+
+i20 : 
+x14 | x13 | x9
+o20 =  x9x13x14+x9x13+x9x14+x13x14+x9+x13+x14 
+o20 :  R 
+
+i21 : 
+x13
+o21 =  x13 
+o21 :  R 
+
+i22 : 
+(x19+1) & (x14 | x13)
+o22 =  x13x14x19+x13x14+x13x19+x14x19+x13+x14 
+o22 :  R 
+
+i23 : 
+(x15+1) & (x3 | x19)
+o23 =  x3x15x19+x3x15+x3x19+x15x19+x3+x19 
+o23 :  R 
+
+i24 : 
+(x19+1) & (x16 | x15 | x14)
+o24 =  x14x15x16x19+x14x15x16+x14x15x19+x14x16x19+x15x16x19+x14x15+x14x16+x15x16+x14x19+x15x19+x16x19+x14+x15+x16 
+o24 :  R 
+
+i25 : 
+(((x17 | (x16+1)) & (x16 | x19))+1)
+o25 =  x16x17+x16x19+x19+1 
+o25 :  R 
+
+i26 : 
+(x16+1) & (x19 | x18)
+o26 =  x16x18x19+x16x18+x16x19+x18x19+x18+x19 
+o26 :  R 
+
+i27 : 
+(x14 | (x16+1)) & (x16 | ((x18+1)&(x20+1)))
+o27 =  x16x18x20+x14x16+x16x18+x16x20+x18x20+x16+x18+x20+1 
+o27 :  R 
+
+i28 : 
+(x17+1) & x16 & x14
+o28 =  x14x16x17+x14x16 
+o28 :  R 
+
